@@ -4,6 +4,7 @@ import "./App.css";
 
  
 import ProductSelected from "./components/Product copy";
+import Todolist from "./components/Todolist";
 
 interface ThemeContextType {
   theme: string;
@@ -14,13 +15,22 @@ export const ThemeContext = createContext<ThemeContextType | undefined>(
 );
 function App() {
   const [theme, setTheme] = useState<string>("dark");
-
-
+  const [toggle, setToggle] = useState<boolean>(false);
+  const [toggleTodo, setToggleTodo] = useState<boolean>(false);
+  const handleMount = () => {
+    setToggle(!toggle)
+  }
+  const handleMountTodo = () => {
+    setToggleTodo(!toggleTodo);
+  };
   return (
     <>
       <ThemeContext.Provider value={{ theme, setTheme }}>
         <div>Hello World</div>
-        <ProductSelected></ProductSelected>
+        <button onClick={() => handleMount()}> Mount </button>
+        {toggle ? <ProductSelected></ProductSelected> : null}
+        <button onClick={() => handleMountTodo()}> Mount To do list </button>
+        {toggleTodo ? <Todolist></Todolist> : null}
       </ThemeContext.Provider>
     </>
   );

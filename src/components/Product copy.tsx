@@ -56,7 +56,13 @@ const ProductSelected = () => {
         : [...prev, id]
     );
   };
-
+  
+    const totalPrice = productExample
+      .filter((product) => {
+        const total = selectedProductId.includes(product.id);
+        return total
+      })
+      .reduce((sum, product) => sum + product.price, 0);
   return (
     <div>
       <h1>Product Selected with Checkbox</h1>
@@ -76,6 +82,9 @@ const ProductSelected = () => {
         ))}
       </ul>
       <p>Selected Products: {selectedProductId.join(", ")}</p>
+      <p>
+        Sum price Products: {totalPrice}$
+      </p>
     </div>
   );
 };
