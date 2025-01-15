@@ -5,8 +5,9 @@ import "./App.css";
  
 
 import Todolist from "./components/Todolist";
-import UEFRefresh from "./components/useEffectRefresh";
-import TimerIntervalTest from "./components/TimerInterval";
+
+import UseLayOutRF from "./components/UseLayOutRF";
+import UseRefRF from "./components/UseRefRF";
 
 interface ThemeContextType {
   theme: string;
@@ -32,7 +33,7 @@ function App() {
         <button onClick={() => handleMountTodo()}> Mount To do list </button>
         {toggleTodo ? <Todolist></Todolist> : null}
         <button onClick={() => handleMount()}> Mount </button>
-        {toggle ? <TimerIntervalTest></TimerIntervalTest> : null}
+        {toggle ? <UseRefRF></UseRefRF> : null}
 
       </ThemeContext.Provider>
     </>
