@@ -4,3 +4,6 @@
 .dark {
   background-color: blue;
 }
+*{
+  margin:0;
+}

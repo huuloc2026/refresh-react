@@ -1,6 +1,9 @@
 import { createContext, useState } from "react";
 import "./App.css";
-import OneWayBinding from "./components/onewaybinding";
+
+
+ 
+import ProductSelected from "./components/Product copy";
 
 interface ThemeContextType {
   theme: string;
@@ -17,7 +20,7 @@ function App() {
     <>
       <ThemeContext.Provider value={{ theme, setTheme }}>
         <div>Hello World</div>
-        <OneWayBinding></OneWayBinding>
+        <ProductSelected></ProductSelected>
       </ThemeContext.Provider>
     </>
   );
