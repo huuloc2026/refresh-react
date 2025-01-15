@@ -3,8 +3,10 @@ import "./App.css";
 
 
  
-import ProductSelected from "./components/Product copy";
+
 import Todolist from "./components/Todolist";
+import UEFRefresh from "./components/useEffectRefresh";
+import TimerIntervalTest from "./components/TimerInterval";
 
 interface ThemeContextType {
   theme: string;
@@ -27,10 +29,11 @@ function App() {
     <>
       <ThemeContext.Provider value={{ theme, setTheme }}>
         <div>Hello World</div>
-        <button onClick={() => handleMount()}> Mount </button>
-        {toggle ? <ProductSelected></ProductSelected> : null}
         <button onClick={() => handleMountTodo()}> Mount To do list </button>
         {toggleTodo ? <Todolist></Todolist> : null}
+        <button onClick={() => handleMount()}> Mount </button>
+        {toggle ? <TimerIntervalTest></TimerIntervalTest> : null}
+
       </ThemeContext.Provider>
     </>
   );
